@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import time
  
-value = np.random.randn(5000, 1000)
+value = np.random.randn(10000, 1000)
 a = tf.constant(value)
  
 b = a * a
@@ -15,7 +15,7 @@ with tf.Session() as sess:
             c+=1
             if c%100 == 0:
                 d = c / 10
-                print(d)
+                print(d,time.time()-tic)
 
 toc = time.time()
 t_cost = toc - tic
